@@ -1,34 +1,53 @@
-#============================================
-# Pratikum 1 : Konsep ADT dan File Handling
-# LAtihan dasar 1A: Membaca seluruh isi file
-#============================================
+# ==========================================================
+# Praktikum 1: Konsep ADT dan File Handling
+# Latihan Dasar 1A: Membaca seluruh isi file
+# ==========================================================
 
-# Membuka file dengan mode read ("r")
-import os
-path = os.path.dirname(__file__)
-with open(os.path.join(path, "data_mahasiswa.txt"), "r", encoding="utf-8") as file:
-   isi_file = file.read()
+with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+    isi_file = file.read() # Membaca seluruh isi file sebagai string
+# Menampilkan isi file ke layar
+print("=== Isi File Data Mahasiswa ===")
 print(isi_file)
 
-print("Hasil Read")
-print("Tipe Data", type(isi_file))
-print("Jumlah Karakter", len(isi_file))
-print("jumlah baris", isi_file.count("\n")+1)
-
-#Membuka file per baris
-print("===Membaca File per Baris===")
-Jumlah_baris = 0
+# ==========================================================
+# Praktikum 1: Konsep ADT dan File Handling
+# Latihan Dasar 1B: Membaca file per baris
+# ==========================================================
 with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
     for baris in file:
-        Jumlah_baris = Jumlah_baris + 1
-        baris = baris.strip() # menghilangkan baris baru \n
-        print("Baris ke-: ", Jumlah_baris)
-        print("Isinya: ", baris)
+        baris = baris.strip() # Menghapus karakter newline
+print(baris)
+
+# ==========================================================
+# Praktikum 1: Konsep ADT dan File Handling
+# Latihan Dasar 1C: Analisis read() vs baca per baris
+# ==========================================================
+# -------------------------------
+# Bagian A: Baca file dengan read()
+# -------------------------------
+with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
+    isi_file = file.read() # seluruh isi file jadi 1 string besar
+print("=== HASIL READ() ===")
+print("Tipe data:", type(isi_file))
+print("Jumlah karakter:", len(isi_file))
+print("Jumlah baris:", isi_file.count("\n") + 1)
+
+# -------------------------------
+# Bagian B: Baca file per baris
+# -------------------------------
+jumlah_baris = 0
+with open("data_mahasiswa.txt","r",encoding="utf-8") as file:
+    for baris in file:
+        jumlah_baris = jumlah_baris + 1
+        baris = baris.strip()
+print("Baris ke-", jumlah_baris)
+print("Isinya :", baris)
 
 #================================================
 # Pratikum 1 : Konsep ADT dan File Handling
 # LAtihan dasar 3: Parsing menjadi kolom data
 #================================================
+
 with open("data_mahasiswa.txt", "r", encoding="utf-8") as file:
     for baris in file:
         baris = baris.strip()
