@@ -2,7 +2,7 @@ BR001,MieGorengSedaap,40
 BR002,MieRebusIndomie,50
 BR003,CikiTaro,25
 BR004,BiskuitRoma,15
-BR005,KopiKapalApi,60
+BR005,Permen,50
 BR006,SusuIndomilk,20
 BR007,CikiChikiBalls,30
 BR008,KopiGoodDay,45

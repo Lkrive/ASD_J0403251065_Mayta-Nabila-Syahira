@@ -4,7 +4,7 @@
 #
 # Nama : Mayta Nabila Syahira
 # NIM : J0403251065
-# Kelas : B2/P2
+# Kelas : P/B2
 # ==========================================================
 # -------------------------------
 # Konstanta nama file
@@ -19,127 +19,171 @@ def baca_stok(nama_file):
   for baris in f:
     baris = baris.strip()
     if baris:
-     kode, namabarang, stok = baris.split(",")
+     kode, nama_barang, stok = baris.split(",")
      stok_dict[kode] = {
-      "Nama barang": namabarang, #key
+      "Nama": nama_barang, #key
       "Stok": int(stok)    #value
       }
  return stok_dict
-#Memanggil fungsi untuk membaca data mahasiswa
+#Memanggil fungsi untuk membaca stok barang
 buka_stok = baca_stok(nama_file)
-#print("jumlah data terbaca", len(buka_data))
+#print("jumlah data terbaca", len(buka_stok))
 
 
 # -------------------------------
 # Fungsi: Menyimpan data ke file
 # -------------------------------
-def simpan_stok(nama_file, stok_dict):
- with open(nama_file, 'w') as file:
-  for kode in stok_dict:
-   namabarang = stok_dict[kode]['Nama barang']
-   stok = stok_dict[kode]['Stok']
-   file.write(f"{kode}, {namabarang}, {stok}\n")
-#Memanggil fungsi untuk menyimpan data mahasiswa ke file
-simpan_data_mahasiswa(nama_file, buka_data)
-#print("data mahasiswa berhasil disimpan ke file."
-
-
- """
+"""
  Menyimpan seluruh data stok ke file teks.
  Format per baris: KodeBarang,NamaBarang,Stok
  """
- # TODO: Tulis ulang seluruh isi file berdasarkan stok_dict
- # Hint: with open(nama_file, "w", enco
- # -------------------------------
+#Memanggil fungsi untuk menyimpan data mahasiswa ke file
+def simpan_stok(nama_file, stok_dict):
+ with open(nama_file, 'w') as file:
+  for kode in stok_dict:
+   nama_barang = stok_dict[kode]['Nama']
+   stok = stok_dict[kode]['Stok']
+   file.write(f"{kode}, {nama_barang}, {stok}\n")
+print("Data berhasil disimpan ke file.")
+
+# -------------------------------
 # Fungsi: Menampilkan semua data
 # -------------------------------
 def tampilkan_semua(stok_dict):
- """
- Menampilkan semua barang di stok_dict.
- """
- # TODO: Jika kosong, tampilkan pesan stok kosong
- # TODO: Tampilkan dengan format rapi: kode | nama | stok
- pass
+ if len(stok_dict) == 0:
+  print("Maaf, stok kosong")
+  return
+ 
+ #membuat headertable
+ print("=====daftar barang=====")
+ print(f"{'Kode':<10} | {'Nama':<12} | {'Stok':>5}")
+ print("-" * 32)
+
+ '''
+untuk tampilan yang rapi, atur f-string formating
+{'Kode ':<10} artinya lebar kolom NIM 10 karakter, rata kiri
+{'Nama barang':<12} artinya lebar kolom Nama 12 karakter, rata kiri    {'Stok':>5} artinya lebar kolom Nilai 5 karakter, rata kanan
+cetak - sebanyak 32 kali
+'''
+
+ for kode in sorted(stok_dict.keys()):
+  nama_barang = stok_dict[kode]['Nama']
+  stok = stok_dict[kode]['Stok']
+  print(f"{kode:<10} | {nama_barang:<12} |{stok:>5}")
+
 # -------------------------------
 # Fungsi: Cari barang berdasarkan kode
 # -------------------------------
+
 def cari_barang(stok_dict):
- """
- Mencari barang berdasarkan kode barang.
- """
- kode = input("Masukkan kode barang: ").strip()
- # TODO: Cek apakah kode ada di dictionary
- # Jika ada: tampilkan detail barang
- # Jika tidak ada: tampilkan 'Barang tidak ditemukan'
- pass
+ kode_cari= input("masukan Kode barang yang dicari: ")
+ if kode_cari in stok_dict:
+   nama_barang = stok_dict[kode_cari]['Nama']
+   stok = stok_dict[kode_cari]['Stok']
+
+   print('Barang ditemukan: ')
+   print(f'Kode:{kode_cari}')
+   print(f'Nama:{nama_barang}')
+   print(f'Stok:{stok}')
+ else:
+  print('Barang tidak ditemukan.')
+
 # -------------------------------
 # Fungsi: Tambah barang baru
 # -------------------------------
 def tambah_barang(stok_dict):
- """
- Menambah barang baru ke stok_dict.
- """
- kode = input("Masukkan kode barang baru: ").strip()
- nama = input("Masukkan nama barang: ").strip()
- # TODO: Validasi kode tidak boleh duplikat
- # Jika sudah ada: tampilkan 'Kode sudah digunakan' dan return
- # TODO: Input stok awal (integer)
- # Hint: stok_awal = int(input(...))
- # TODO: Simpan ke dictionary
- pass
+    kode = input("Masukkan kode barang baru: ").strip()
+
+    # Validasi kode duplikat 
+    if kode in stok_dict:
+        print("Kode sudah digunakan")
+        return   # ⬅️ HARUS DI DALAM IF
+
+    nama = input("Masukkan nama barang: ").strip()
+
+    try:
+        stok_awal = int(input("Masukkan stok awal: "))
+    except ValueError:
+        print("Stok harus berupa angka")
+        return
+
+    stok_dict[kode] = {
+        "Nama": nama,
+        "Stok": stok_awal
+    }
+
+    print("Barang berhasil ditambahkan")
+
+
 # -------------------------------
 # Fungsi: Update stok barang
 # -------------------------------
 def update_stok(stok_dict):
- """
- Mengubah stok barang (tambah atau kurangi).
- Stok tidak boleh menjadi negatif.
- """
- kode = input("Masukkan kode barang yang ingin diupdate: ").strip()
-# TODO: Cek apakah kode ada di dictionary
- # Jika tidak ada: tampilkan pesan dan return
- print("Pilih jenis update:")
- print("1. Tambah stok")
- print("2. Kurangi stok")
- pilihan = input("Masukkan pilihan (1/2): ").strip()
- # TODO: Input jumlah perubahan stok
- # Hint: jumlah = int(input("Masukkan jumlah: "))
- # TODO:
- # - Jika pilihan 1: stok = stok + jumlah
- # - Jika pilihan 2: stok = stok - jumlah
- # - Jika hasil < 0: batalkan dan tampilkan error
- pass
+    kode = input("Masukkan kode barang yang ingin diupdate: ").strip()
+    
+    
+    if kode not in stok_dict:
+      print('Kode tidak ditemukan. Update dibatalkan')
+      return
+
+    print("Pilih jenis update:")
+    print("1. Tambah stok")
+    print("2. Kurangi stok")
+    pilihan = input("Masukkan pilihan (1/2): ").strip()
+
+    try:
+      jumlah=int(input('Masukan jumlah (0-100): ').strip())
+    except ValueError:
+      print('Jumlah harus berupa angka')
+      return
+stok_lama = stok_dict[kode]['Stok']
+if pilihan == '1':
+ stok_baru = stok_lama + jumlah
+
+elif pilihan == '2':
+ stok_baru = stok_lama - jumlah
+
+if stok_baru < 0:
+  print("Stok tidak boleh negatif. Update dibatalkan")
+  return
+
+else:
+  print('Pilihan tidak valid, Update dibatalkan')
+  return
+ 
+stok_dict[kode]['Stok'] = stok_baru
+print(f'Update berhasil, Stok{kode}berubah dari {stok_lama} menjadi {stok_baru}')
+
 # -------------------------------
 # Program Utama
 # -------------------------------
 def main():
- # Membaca data dari file saat program mulai
- stok_barang = baca_stok(NAMA_FILE)
- while True:
- print("\n=== MENU STOK KANTIN ===")
- print("1. Tampilkan semua barang")
- print("2. Cari barang berdasarkan kode")
- print("3. Tambah barang baru")
- print("4. Update stok barang")
- print("5. Simpan ke file")
- print("0. Keluar")
- pilihan = input("Pilih menu: ").strip()
- if pilihan == "1":
- tampilkan_semua(stok_barang)
- elif pilihan == "2":
- cari_barang(stok_barang)
- elif pilihan == "3":
- tambah_barang(stok_barang)
- elif pilihan == "4":
- update_stok(stok_barang)
- elif pilihan == "5":
- simpan_stok(NAMA_FILE, stok_barang)
- print("Data berhasil disimpan.")
- elif pilihan == "0":
- print("Program selesai.")
- break
-else:
- print("Pilihan tidak valid. Silakan coba lagi.")
-# Menjalankan program utama
-if __name__ == "__main__":
- main()
+    stok_barang = baca_stok(nama_file)
+
+    while True:
+        print("\n=== MENU STOK KANTIN ===")
+        print("1. Tampilkan semua barang")
+        print("2. Cari barang berdasarkan kode")
+        print("3. Tambah barang baru")
+        print("4. Update stok barang")
+        print("5. Simpan ke file")
+        print("0. Keluar")
+
+        pilihan = input("Pilih menu: ").strip()
+
+        if pilihan == "1":
+            tampilkan_semua(stok_barang)
+        elif pilihan == "2":
+            cari_barang(stok_barang)
+        elif pilihan == "3":
+            tambah_barang(stok_barang)
+        elif pilihan == "4":
+            update_stok(stok_barang)
+        elif pilihan == "5":
+            simpan_stok(nama_file, stok_barang)
+            print("Data berhasil disimpan.")
+        elif pilihan == "0":
+            print("Program selesai.")
+            break
+        else:
+            print("Pilihan tidak valid.")
