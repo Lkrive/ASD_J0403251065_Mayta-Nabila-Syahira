@@ -7,16 +7,21 @@ nama_file ="data_mahasiswa.txt"
 #Fungsi untuk membaca data mahasiswa dari file dan menyimpannya dalam dictionary
 def baca_data_mahasiswa(nama_file):
     data_dict = {} #Inisialisasi data dictionary kosong
-#Membuka file dan membaca isinya
-    with open(nama_file, 'r') as file:
-        for baris in file:
-            baris = baris.strip() #Menghilangkan karakter newline dan spasi di awal/akhir (\n)
-            nim, nama, nilai = baris.split(',') #parsing data berdasarkan karakter ,    
-        #simpan data ke dictionary dengan NIM sebagai key
-            data_dict[nim] = {
-            'nama': nama, 
-            'nilai': int(nilai)
-            }
+    # MEMPERBAIKI: Menggunakan mode 'r' (read) bukan 'w' (write) agar bisa dibaca
+    try:
+        with open(nama_file, 'r') as file:
+            for baris in file:
+                baris = baris.strip() #Menghilangkan karakter newline dan spasi di awal/akhir (\n)
+                if baris: # Tambahan: pastikan baris tidak kosong
+                    nim, nama, nilai = baris.split(',') #parsing data berdasarkan karakter ,    
+                #simpan data ke dictionary dengan NIM sebagai key
+                    data_dict[nim] = {
+                    'nama': nama, 
+                    'nilai': int(nilai)
+                    }
+    except FileNotFoundError:
+        # Jika file belum ada, buat file kosong biar tidak crash
+        open(nama_file, 'a').close()
     return data_dict
 
 #Memanggil fungsi untuk membaca data mahasiswa
@@ -115,9 +120,10 @@ simpan_data_mahasiswa(nama_file, buka_data)
 # Latihan 6 : Membuat Menu
 # ===========================================================
 def main():
-    #menjalankan fungsi 1 load data
+    # Menjalankan fungsi 1 load data
     buka_data = baca_data_mahasiswa(nama_file)
-while True:
+    # MEMPERBAIKI: while True harus menjorok ke dalam (indentasi) fungsi main
+    while True:
         print("\n===Menu program=== ")
         print("1. Tampilkan data mahasiswa")
         print("2. Cari data mahasiswa")
@@ -139,5 +145,6 @@ while True:
             break
         else:
             print("pilihan tidak valid. silakan coba lagi.")
+
 if __name__ == "__main__":
     main()

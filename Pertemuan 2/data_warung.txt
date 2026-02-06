@@ -7,4 +7,4 @@ MD006,KopiSachet,120
 MD007,AirMineral,48
 MD008,EsKrim,25
 MD009,SnackCiki,40
-MD010,GasElpiji,10
+MD010,GasElpiji,30

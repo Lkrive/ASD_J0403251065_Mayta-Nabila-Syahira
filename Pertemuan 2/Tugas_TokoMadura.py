@@ -5,7 +5,7 @@
 # ========================================================
 
 # Nama file didefinisikan secara global agar konsisten
-NAMA_FILE = "data_warung.txt"
+nama_file = "data_warung.txt"
 
 def baca_stok(nama_file):
     data_warung = {}
@@ -40,7 +40,7 @@ def cari_barang(data_dict):
     kode = input("\nMasukkan Kode Barang yang dicari: ").strip().upper()
     if kode in data_dict:
         item = data_dict[kode]
-        print(f"-> DATA DITEMUKAN!")
+        print(f"-> DATA Ditemukan!")
         print(f"   Nama Barang : {item['nama']}")
         print(f"   Jumlah Stok : {item['stok']}")
     else:
@@ -98,7 +98,7 @@ def simpan_ke_file(nama_file, data_dict):
 
 def main():
     # Inisialisasi: Load data dari file ke memory (dictionary)
-    stok_warung = baca_stok(NAMA_FILE)
+    stok_warung = baca_stok(nama_file)
     
     while True:
         print("\n=== SISTEM MANAJEMEN STOK WARUNG MADURA ===")
@@ -120,7 +120,7 @@ def main():
         elif pilihan == '4':
             update_stok(stok_warung)
         elif pilihan == '5':
-            simpan_ke_file(NAMA_FILE, stok_warung)
+            simpan_ke_file(nama_file, stok_warung)
         elif pilihan == '0':
             print("\nProgram selesai. Warung Madura tetap buka 24 jam!")
             break
