@@ -4,8 +4,8 @@ BR003,  CikiTari , 25
 BR004,  BiskuitRom, 15
 BR005,  PermenYupo, 50
 BR006,  SusuIndom, 20
-BR007,  CikiCkBalls, 30
-BR008,  KopiGoodmind, 45
-BR009,  BiskuitBttr, 20
+BR007,  CikiCkck, 30
+BR008,  KopiGmind, 45
+BR009,  BiskuitRam, 20
 BR010,  MieGelas, 35
 BR011,  CoklatVist, 30
