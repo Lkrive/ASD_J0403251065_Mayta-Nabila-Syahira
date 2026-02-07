@@ -14,19 +14,22 @@ nama_file = "stok_barang.txt"
 # Fungsi: Membaca data dari file
 # -------------------------------
 def baca_stok(nama_file):
- stok_dict = {}
- with open(nama_file, "r", encoding="utf-8") as f:
-  for baris in f:
-    baris = baris.strip()
-    if baris:
-     kode, nama_barang, stok = baris.split(",")
-     stok_dict[kode] = {
-      "Nama": nama_barang, #key
-      "Stok": int(stok)    #value
-      }
- return stok_dict
+    stok_dict = {}
+    try:
+        with open(nama_file, "r", encoding="utf-8") as f:
+            for baris in f:
+                baris = baris.strip()
+                if baris:
+                    kode, nama_barang, stok = baris.split(",")
+                    stok_dict[kode] = {
+                        "Nama": nama_barang,
+                        "Stok": int(stok)
+                    }
+    except FileNotFoundError:
+        print("File stok belum ada. Membuat data stok kosong...")
+    return stok_dict
 #Memanggil fungsi untuk membaca stok barang
-buka_stok = baca_stok(nama_file)
+#buka_stok = baca_stok(nama_file)
 #print("jumlah data terbaca", len(buka_stok))
 
 
@@ -36,14 +39,14 @@ buka_stok = baca_stok(nama_file)
 """
  Menyimpan seluruh data stok ke file teks.
  Format per baris: KodeBarang,NamaBarang,Stok
- """
+"""
 #Memanggil fungsi untuk menyimpan data mahasiswa ke file
 def simpan_stok(nama_file, stok_dict):
- with open(nama_file, 'w') as file:
-  for kode in stok_dict:
-   nama_barang = stok_dict[kode]['Nama']
-   stok = stok_dict[kode]['Stok']
-   file.write(f"{kode}, {nama_barang}, {stok}\n")
+  with open(nama_file, 'w') as file:
+   for kode in stok_dict:
+    nama_barang = stok_dict[kode]['Nama']
+    stok = stok_dict[kode]['Stok']
+    file.write(f"{kode}, {nama_barang}, {stok}\n")
 print("Data berhasil disimpan ke file.")
 
 # -------------------------------
@@ -55,7 +58,7 @@ def tampilkan_semua(stok_dict):
   return
  
  #membuat headertable
- print("=====daftar barang=====")
+ print("========Daftar Stok barang========")
  print(f"{'Kode':<10} | {'Nama':<12} | {'Stok':>5}")
  print("-" * 32)
 
@@ -64,7 +67,7 @@ untuk tampilan yang rapi, atur f-string formating
 {'Kode ':<10} artinya lebar kolom NIM 10 karakter, rata kiri
 {'Nama barang':<12} artinya lebar kolom Nama 12 karakter, rata kiri    {'Stok':>5} artinya lebar kolom Nilai 5 karakter, rata kanan
 cetak - sebanyak 32 kali
-'''
+ '''
 
  for kode in sorted(stok_dict.keys()):
   nama_barang = stok_dict[kode]['Nama']
@@ -97,7 +100,7 @@ def tambah_barang(stok_dict):
     # Validasi kode duplikat 
     if kode in stok_dict:
         print("Kode sudah digunakan")
-        return   # ⬅️ HARUS DI DALAM IF
+        return
 
     nama = input("Masukkan nama barang: ").strip()
 
@@ -120,11 +123,10 @@ def tambah_barang(stok_dict):
 # -------------------------------
 def update_stok(stok_dict):
     kode = input("Masukkan kode barang yang ingin diupdate: ").strip()
-    
-    
+
     if kode not in stok_dict:
-      print('Kode tidak ditemukan. Update dibatalkan')
-      return
+        print("Kode tidak ditemukan. Update dibatalkan")
+        return
 
     print("Pilih jenis update:")
     print("1. Tambah stok")
@@ -132,27 +134,28 @@ def update_stok(stok_dict):
     pilihan = input("Masukkan pilihan (1/2): ").strip()
 
     try:
-      jumlah=int(input('Masukan jumlah (0-100): ').strip())
+        jumlah = int(input("Masukkan jumlah (0-100): "))
     except ValueError:
-      print('Jumlah harus berupa angka')
-      return
-stok_lama = stok_dict[kode]['Stok']
-if pilihan == '1':
- stok_baru = stok_lama + jumlah
+        print("Jumlah harus berupa angka")
+        return
 
-elif pilihan == '2':
- stok_baru = stok_lama - jumlah
+    stok_lama = stok_dict[kode]["Stok"]
 
-if stok_baru < 0:
-  print("Stok tidak boleh negatif. Update dibatalkan")
-  return
+    if pilihan == "1":
+        stok_baru = stok_lama + jumlah
+    elif pilihan == "2":
+        stok_baru = stok_lama - jumlah
+    else:
+        print("Pilihan tidak valid. Update dibatalkan")
+        return
 
-else:
-  print('Pilihan tidak valid, Update dibatalkan')
-  return
- 
-stok_dict[kode]['Stok'] = stok_baru
-print(f'Update berhasil, Stok{kode}berubah dari {stok_lama} menjadi {stok_baru}')
+    if stok_baru < 0:
+        print("Stok tidak boleh negatif. Update dibatalkan")
+        return
+
+    stok_dict[kode]["Stok"] = stok_baru
+    print(f"Update berhasil. Stok {kode} berubah dari {stok_lama} menjadi {stok_baru}")
+
 
 # -------------------------------
 # Program Utama
@@ -187,3 +190,5 @@ def main():
             break
         else:
             print("Pilihan tidak valid.")
+if __name__ == "__main__":
+    main()
