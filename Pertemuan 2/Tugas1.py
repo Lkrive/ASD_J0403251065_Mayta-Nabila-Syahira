@@ -36,10 +36,6 @@ def baca_stok(nama_file):
 # -------------------------------
 # Fungsi: Menyimpan data ke file
 # -------------------------------
-"""
- Menyimpan seluruh data stok ke file teks.
- Format per baris: KodeBarang,NamaBarang,Stok
-"""
 #Memanggil fungsi untuk menyimpan data mahasiswa ke file
 def simpan_stok(nama_file, stok_dict):
   with open(nama_file, 'w') as file:
@@ -171,7 +167,7 @@ def main():
         print("4. Update stok barang")
         print("5. Simpan ke file")
         print("0. Keluar")
-
+        
         pilihan = input("Pilih menu: ").strip()
 
         if pilihan == "1":
