@@ -51,12 +51,13 @@ class LinkedList:
 # === BAGIAN PEMBUKTIAN DATA LAT 1 ===
 if __name__ == "__main__":
     ll = LinkedList()
-    for x in [10, 20, 30, 40]:
-        ll.insert_at_end(x)
-
+    ll.insert_at_end(10)
+    ll.insert_at_end(20)
+    ll.insert_at_end(30)
+    ll.insert_at_end(40)
     print("Data Awal:")
     ll.display()
-
+    
     print("Menghapus node 20...")
     ll.delete_node(20)
     ll.display()
