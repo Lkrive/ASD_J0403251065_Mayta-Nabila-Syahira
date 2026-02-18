@@ -1,3 +1,9 @@
+#============================================================
+# Nama  : Mayta Nabila Syahira
+# NIM   : J0403251065
+# Kelas : P/B2
+#============================================================
+
 # ==========================================================
 # Praktikum 1: Konsep ADT dan File Handling
 # Latihan Dasar 1A: Membaca seluruh isi file
