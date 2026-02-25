@@ -5,7 +5,7 @@
 #============================================================
 
 #============================================================
-# Materi 2 Rekursif : Menjumlahkan Elemen List
+# Materi 3 Rekursif : Menjumlahkan Elemen List
 #============================================================
 
 def jumlah_list(data, index=0):
