@@ -10,14 +10,23 @@
 #============================================================
 
 def biner(n, hasil=""):
-    # Base case: jika panjang string sudah n, cetak hasil
+    # 1. Base Case (Kondisi Berhenti)
+    # Kalau panjang string 'hasil' sudah sama dengan n,
+    # berarti satu urutan biner sudah jadi dan siap dicetak ke terminal.
     if len(hasil) == n:
         print(hasil)
-        return
+        return # Kembali ke tumpukan sebelumnya (backtracking)
     
-    # Choose + Explore: tambah '0'
+    # 2. Choose + Explore (Cabang Kiri: Tambah '0')
+    # Program bakal nyoba nambahin angka '0' dulu sampai mentok ke base case.
     biner(n, hasil + "0")
-    # Choose + Explore: tambah '1'
-    biner(n, hasil + "1")
     
+    # 3. Choose + Explore (Cabang Kanan: Tambah '1')
+    # Setelah urutan yang diawali '0' selesai, program balik lagi
+    # buat nyoba nambahin angka '1'.
+    biner(n, hasil + "1")
+
+# --- Bagian Eksekusi ---
+print("===== Daftar Kombinasi Biner (n=3) =====")
+# Memanggil fungsi untuk panjang 3, totalnya bakal ada 8 kombinasi (2^3)
 biner(3)
