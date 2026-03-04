@@ -41,16 +41,7 @@ Soal:
 3. Berapa kali pergeseran terjadi pada iterasi i = 4?
 
 Jawaban:
-1. Isi list setelah iterasi i = 1 adalah [2, 5, 4, 6, 1, 3].
-   Penjelasan: i=1 berarti key adalah 2. Karena 5 > 2, angka 5 digeser ke kanan 
-   dan 2 disisipkan di posisi awal (index 0).
-2. Isi list setelah iterasi i = 3 adalah [2, 4, 5, 6, 1, 3].
-   Penjelasan: Pada i=2, key adalah 4 (hasilnya [2, 4, 5, ...]). Pada i=3, 
-   key adalah 6. Karena 5 < 6, tidak ada pergeseran yang terjadi, sehingga 
-   urutan tetap [2, 4, 5, 6, 1, 3].
-3. Pada iterasi i = 4, terjadi sebanyak 4 kali pergeseran.
-   Penjelasan: Pada i=4, key adalah 1. Program membandingkan 1 dengan [2, 4, 5, 6]. 
-   Karena semua angka tersebut lebih besar dari 1, maka terjadi 4 kali operasi 
-   geser: angka 6 geser, 5 geser, 4 geser, dan 2 geser, untuk memberi ruang 
-   bagi angka 1 di posisi paling depan.
+1. Isi list i = 1: [2, 5, 4, 6, 1, 3] karena key = 2 lebih kecil dari 5 sehingga 5 geser ke kanan dan 2 masuk ke depan.
+2. Isi list i = 3: [2, 4, 5, 6, 1, 3] karena key = 6 sudah lebih besar dari angka 5 di kirinya, jadi tidak ada angka yang geser.
+3. Pergeseran i = 4: Terjadi 4 kali geser karena key = 1 lebih kecil dari semua angka di kirinya (6, 5, 4, 2) sehingga semuanya harus geser.
 '''
