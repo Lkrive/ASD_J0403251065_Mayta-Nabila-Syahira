@@ -1,0 +1,10 @@
+BK001,Harry Potter and the Sorcerer's Stone,150000
+BK002,To Kill a Mockingbird,120000
+BK003,Aku dan Kamu,110000
+BK004,Pride and Prejudice,95000
+BK005,The Great Gatsby,105000
+BK006,Moby Dick,135000
+BK007,War and Peace,180000
+BK008,The Hobbit,140000
+BK009,The Catcher in the Rye,115000
+BK010,Laut bercerita,130000

@@ -1,0 +1,27 @@
+#===============================================================
+# Nama   : Mayta Nabila Syahira
+# NIM    : J0403251065
+# Kelas  : P/B2
+#===============================================================
+
+#===============================================================
+# Latihan 1 : Membuat Node Tree dengan child
+#===============================================================
+
+#class node digunakan dasar dari tree
+
+class Node:
+    def__init__(self, data):
+    self.data = data #menimpan nilai node
+    self.left = None #child kiri
+    self.rigt = None #child kanan
+
+#membuat root
+root = Node('A')
+
+#menampilkan isi node
+print("Data pada root", root.data)
+print("Data child kiri root", root.left)
+print("Data child kanan root", root.right)
+
+#Pembahasan : ...............................
