@@ -85,8 +85,3 @@ tampil_struktur(root)
 #    Kalau pohonnya miring begini, keunggulan BST jadi hilang. Pas kita 
 #    mau nyari angka 40, komputer tetep harus ngelewatin 10, 20, dan 30. 
 #    Nggak bisa langsung "potong jalan" ke tengah.
-#
-# 4. Kesimpulannya: 
-#    Biar BST itu kinerjanya bagus (cepet), data yang masuk sebaiknya 
-#    acak, jangan urut. Kalau urut, dia cuma jadi barisan angka biasa 
-#    yang nyamar jadi pohon.

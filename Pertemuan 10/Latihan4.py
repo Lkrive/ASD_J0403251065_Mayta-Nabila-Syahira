@@ -87,8 +87,3 @@ tampil_struktur(root)
 # 3. Hasil Akhir yang Aesthetic:
 #    Setelah diputar, si 20 berdiri tegak di tengah (Root). Dia punya 
 #    tangan kiri (10) dan tangan kanan (30). Pohon jadi seimbang sempurna!
-#
-# 4. Kesimpulannya:
-#    Rotasi Kanan adalah solusi buat pohon yang miring ke kiri. Dengan 
-#    begini, struktur data kamu nggak cuma rapi dilihat, tapi juga 
-#    bikin proses pencarian angka di komputer jadi jauh lebih efisien.

@@ -88,8 +88,3 @@ tampil_struktur(root)
 #    - Sebelum: Bentuknya lurus (10 -> 20 -> 30).
 #    - Sesudah: Bentuknya jadi segitiga sempurna. 20 di puncak, 
 #      10 di kiri, dan 30 di kanan.
-#
-# 4. Kesimpulannya:
-#    Rotasi kiri itu dipakai pas pohon kamu "Keberatan Kanan". Hasilnya? 
-#    Pohon jadi seimbang, pencarian data jadi lebih ngebut, dan dosen 
-#    pasti seneng lihat strukturnya rapi!
