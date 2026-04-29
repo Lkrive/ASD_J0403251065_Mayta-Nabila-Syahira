@@ -72,7 +72,7 @@ print("\n\nStruktur Sesudah Rotasi:")
 tampil_struktur(root)
 
 #===============================================================
-# Penjelasan (Gaya Santai):
+# Penjelasan:
 #===============================================================
 # 1. Kenapa Harus Rotasi?
 #    Karena awalnya pohon kamu "berat sebelah" ke kanan (10 -> 20 -> 30). 
