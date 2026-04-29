@@ -48,7 +48,12 @@ bfs(graph, 'Rumah')
 # 3. Apa perbedaan urutan BFS jika struktur graph diubah?  
 #=============================================================== 
 # Penjelasan & Jawaban: 
-# 1. Node yang dikunjungi pertama adalah "Rumah" karena BFS dimulai dari node tersebut. 
-# 2. BFS cocok untuk mencari jalur terdekat karena ia mengeksplorasi semua node pada level yang sama sebelum melanjutkan ke level berikutnya, sehingga memastikan bahwa jalur pertama yang ditemukan adalah jalur terdekat. 
-# 3. Urutan BFS akan berubah jika struktur graph diubah karena BFS mengikuti urutan pengeksplorasian node berdasarkan level. Jika ada perubahan pada hubungan antar node, maka urutan kunjungan juga akan berubah sesuai dengan struktur baru graph tersebut. 
+# 1. Node yang dikunjungi pertama adalah "Rumah" karena BFS 
+#    dimulai dari node tersebut. 
+# 2. BFS cocok untuk mencari jalur terdekat karena ia mengeksplorasi 
+#    semua node pada level yang sama sebelum melanjutkan ke level berikutnya, 
+#    sehingga memastikan bahwa jalur pertama yang ditemukan adalah jalur terdekat. 
+# 3. Urutan BFS akan berubah jika struktur graph diubah karena BFS mengikuti
+#    urutan pengeksplorasian node berdasarkan level. Jika ada perubahan pada hubungan 
+#    antar node, maka urutan kunjungan juga akan berubah sesuai dengan struktur baru graph tersebut. 
 #===============================================================

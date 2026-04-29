@@ -8,46 +8,50 @@
 # Materi 2 : BFS (Breadth-First Search) pada Graph
 #===============================================================
 
-#struktru data untuk membuat antrian, kita gunakan dari library collections bawaan python
+# Struktur data untuk membuat antrian, kita gunakan dari library collections bawaan Python
 from collections import deque
-from collections import deque
-#representasi graph
+
+# Representasi graph sebagai adjacency list
+# Graph ini berbentuk tree (pohon) dengan A sebagai root
 graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F', 'G'],
-    'D': [],
-    'E': [],
-    'F': [],
-    'G': []
+    'A': ['B', 'C'],    # Level 1: A terhubung ke B dan C
+    'B': ['D', 'E'],    # Level 2: B terhubung ke D dan E
+    'C': ['F', 'G'],    # Level 2: C terhubung ke F dan G
+    'D': [],            # Level 3: D tidak punya tetangga (daun)
+    'E': [],            # Level 3: E tidak punya tetangga (daun)
+    'F': [],            # Level 3: F tidak punya tetangga (daun)
+    'G': []             # Level 3: G tidak punya tetangga (daun)
 }
 
 def bfs(graph, start):
-    #Fungsi untuk melakukan penelusuran BFS pada graph
-    #graph: dictionary yang menyimpan struktur dari graph
-    #start: node awal untuk memulai BFS
+    # Fungsi untuk melakukan penelusuran BFS pada graph
+    # graph: dictionary yang menyimpan struktur dari graph
+    # start: node awal untuk memulai BFS
 
-    #Queue digunakan untuk menyimpan ode yang akan diproses/dibaca
+    # Queue digunakan untuk menyimpan node yang akan diproses/dibaca
     queue = deque()
-    #Visited set digunakan untuk melacak node yang sudah dikunjungi/diproses
+    # Visited set digunakan untuk melacak node yang sudah dikunjungi/diproses
     visited = set()
-    #masukkan node awal ke queue
+
+    # Masukkan node awal ke queue
     queue.append(start)
-    #tandai node awal sebagai sudah dikunjungi
+    # Tandai node awal sebagai sudah dikunjungi
     visited.add(start)
 
     while queue:
-        #mengambil node paling depan dari queue untuk diproses
+        # Mengambil node paling depan dari queue untuk diproses (FIFO)
         node = queue.popleft()
-        #menampilkan node yang sedang dikunjungi
-        print("Mengunjungi node:", node) 
-        #periksa setiap tetangga dari node yang sedang diproses
+        # Menampilkan node yang sedang dikunjungi
+        print("Mengunjungi node:", node)
+
+        # Periksa setiap tetangga dari node yang sedang diproses
         for neighbor in graph[node]:
-            #jika tetangga belum dikunjungi
+            # Jika tetangga belum dikunjungi
             if neighbor not in visited:
-                #tandai tetangga sebagai sudah dikunjungi
+                # Tandai tetangga sebagai sudah dikunjungi
                 visited.add(neighbor)
-                #masukkan tetangga ke dalam queue untuk diproses selanjutnya
+                # Masukkan tetangga ke dalam queue untuk diproses selanjutnya
                 queue.append(neighbor)
-#memanggil fungsi BFS dengan graph dan node awal 'A'
+
+# Memanggil fungsi BFS dengan graph dan node awal 'A'
 bfs(graph, "A")
