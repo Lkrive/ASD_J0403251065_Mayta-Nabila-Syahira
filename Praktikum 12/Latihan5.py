@@ -85,11 +85,7 @@ for kota in hasil_jarak:
 # 4. Jelaskan bagaimana algoritma Dijkstra bekerja pada kasus yang Anda buat.
 
 # Penjelasan & Jawaban:
-# 1. Node awal yang digunakan adalah 'A'.
-# 2. Node yang memiliki jarak paling kecil dari node awal adalah 'C' dengan jarak 2.
-# 3. Node yang memiliki jarak paling besar dari node awal adalah 'D' dengan jarak 3.
-# 4. Algoritma Dijkstra bekerja dengan cara memulai dari node awal (A) dan mengunjungi 
-#    node tetangga yang memiliki jarak terkecil terlebih dahulu. Dalam kasus ini, algoritma 
-#    pertama kali mengunjungi node C karena memiliki jarak 2, kemudian mengunjungi node B dengan jarak 4, 
-#    dan terakhir mengunjungi node D dengan jarak 3. Algoritma terus memperbarui jarak ke setiap node 
-#    berdasarkan bobot edge yang dilalui, sehingga menghasilkan jarak terpendek dari node awal ke semua node lainnya.
+# 1. Node awal yang digunakan adalah A.
+# 2. Node yang jaraknya paling kecil dari A adalah C dengan jarak 2, karena langsung dari A ke C dan bobotnya paling kecil.
+# 3. Node yang jaraknya paling besar dari A adalah D dengan jarak 3, karena walaupun bisa lewat beberapa jalur, ini tetap yang paling jauh dibanding yang lain.
+# 4. Cara kerja Dijkstra di kasus ini dimulai dari A, lalu cek semua tetangga terdekat. Dari situ dipilih yang jaraknya paling kecil dulu, yaitu C. Setelah itu baru lanjut ke node lain sambil terus update jarak kalau ditemukan yang lebih pendek. Proses ini diulang sampai semua node punya jarak terpendek dari A.

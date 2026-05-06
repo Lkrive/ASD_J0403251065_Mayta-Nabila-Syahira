@@ -27,7 +27,7 @@ if jalur_1 < jalur_2:
     print("Jalur terpendek adalah A -> B -> D") 
 else: 
     print("Jalur terpendek adalah A -> C -> D")
-
+    
 # Pertanyaan Analisis:
 # 1. Berapa total bobot jalur A -> B -> D?
 # 2. Berapa total bobot jalur A -> C -> D?
@@ -36,14 +36,16 @@ else:
 
 # Penjelasan & Jawaban:
 # 1. Total bobot jalur A -> B -> D adalah 4 (A ke B) + 5 (B ke D) = 9.
+#    Jadi kalau lewat B, total jaraknya lumayan besar.
 # 2. Total bobot jalur A -> C -> D adalah 2 (A ke C) + 1 (C ke D) = 3.
-# 3. Jalur yang dipilih sebagai jalur terpendek adalah A -> C -> D karena memiliki total 
-#    bobot yang lebih kecil (3) dibandingkan dengan A -> B -> D (9).
-# 4. Jalur terpendek tidak selalu ditentukan dari jumlah edge yang paling sedikit karena 
-#    bobot pada setiap edge bisa berbeda. Sebuah jalur dengan lebih edge bisa memiliki total 
-#    bobot yang lebih kecil jika bobot pada edge tersebut rendah, sementara jalur dengan sedikit 
-#    edge bisa memiliki total bobot yang lebih besar jika bobot pada edge tersebut tinggi. 
-#    Oleh karena itu, penting untuk mempertimbangkan bobot setiap edge dalam menentukan jalur terpendek, bukan hanya jumlah edge.
+#    Jalur ini lebih kecil karena bobotnya lebih ringan.
+# 3. Jalur yang dipilih sebagai jalur terpendek adalah A -> C -> D,
+#    karena total bobotnya paling kecil dibanding jalur lainnya.
+# 4. Jalur terpendek tidak selalu ditentukan dari jumlah edge paling sedikit
+#    karena yang dihitung itu total bobot, bukan jumlah langkah.
+#    Bisa aja jalurnya lebih panjang (lebih banyak edge),
+#    tapi karena bobot tiap edge kecil, hasil akhirnya tetap lebih cepat.
+#    Jadi yang penting itu total bobotnya, bukan banyaknya edge.
 
 
 # tambahkan komentar sesuai bahasa kalian sendiri atau pemahaman kalian sendiri untuk menjelaskan setiap bagian kode yang ada

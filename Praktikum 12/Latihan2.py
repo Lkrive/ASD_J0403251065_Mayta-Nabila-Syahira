@@ -69,10 +69,16 @@ for node, distance in hasil.items():
 
 # Penjelasan & Jawaban:
 # 1. Jarak terpendek dari A ke B adalah 4.
+#    Soalnya cuma ada satu jalur langsung dari A ke B.
 # 2. Jarak terpendek dari A ke C adalah 2.
-# 3. Jarak terpendek dari A ke D adalah 3 (melalui C) dibandingkan dengan 9 (melalui B).
-# 4. Jarak A ke D lebih kecil melalui C karena bobot dari A ke C (2) dan C ke D (1) lebih 
-#    kecil dibandingkan dengan bobot dari A ke B (4) dan B ke D (5).
-# 5. Fungsi priority_queue dalam algoritma Dijkstra adalah untuk menyimpan node-node yang akan 
-#    diproses berdasarkan jarak terpendek yang ditemukan sejauh ini. Node dengan jarak terpendek 
-# akan diproses terlebih dahulu, sehingga memastikan bahwa algoritma berjalan efisien.
+#    Ini juga langsung dari A ke C dan lebih kecil.
+# 3. Jarak terpendek dari A ke D adalah 3.
+#    Jalurnya lewat C (A -> C -> D), karena 2 + 1 = 3.
+#    Kalau lewat B hasilnya 9, jadi lebih besar.
+# 4. Jarak A ke D lebih kecil lewat C karena total bobotnya lebih ringan.
+#    A -> C -> D cuma 3, sedangkan A -> B -> D itu 9, jadi jelas lebih jauh.
+# 5. Fungsi priority_queue itu buat milih node yang jaraknya paling kecil dulu.
+#    Jadi algoritma selalu ngecek yang paling dekat dulu biar hasilnya efisien.
+# 6. Dijkstra tidak cocok untuk bobot negatif karena bisa bikin hasilnya salah.
+#    Soalnya algoritma ini menganggap jarak yang sudah kecil itu final,
+#    padahal kalau ada bobot negatif, jaraknya masih bisa berubah jadi lebih kecil lagi.

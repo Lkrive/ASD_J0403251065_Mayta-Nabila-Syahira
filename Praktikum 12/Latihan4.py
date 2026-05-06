@@ -54,18 +54,7 @@ for lokasi, jarak in hasil.items():
 # 4. Mengapa Dijkstra cocok digunakan pada kasus lokasi kampus ini?
 
 # Penjelasan & Jawaban:
-# 1. Lokasi yang paling dekat dari Gerbang adalah Kantin dengan waktu tempuh
-#    2 menit.
-# 2. Waktu tempuh terpendek dari Gerbang ke Aula adalah 7 menit melalui jalur
-#    Gerbang -> Kantin -> Lab -> Aula (2 + 4 + 1 = 7 menit).
-# 3. Jalur langsung tidak selalu menghasilkan jarak paling kecil karena bobot
-#    pada setiap edge bisa berbeda. Dalam kasus ini, meskipun ada jalur langsung
-#    dari Gerbang ke Aula, jalur tersebut memiliki bobot yang lebih besar dibandingkan
-#    dengan jalur melalui Kantin dan Lab. Oleh karena itu, penting untuk mempertimbangkan
-#    bobot pada setiap edge dalam menentukan jalur terpendek, bukan hanya jumlah edge.
-# 4. Dijkstra cocok digunakan pada kasus lokasi kampus ini karena algoritma ini
-#    dirancang untuk menemukan jalur terpendek dalam graph dengan bobot non-negatif
-#    seperti waktu tempuh. Dijkstra efisien dalam menangani graph yang tidak terlalu besar
-#    dan memberikan hasil yang akurat untuk kasus ini.
-
-
+# 1. Lokasi yang paling dekat dari Gerbang adalah Kantin dengan waktu tempuh 2 menit, karena itu jarak paling kecil dibanding yang lain.
+# 2. Waktu tempuh terpendek dari Gerbang ke Aula adalah 7 menit lewat jalur Gerbang -> Kantin -> Lab -> Aula (2 + 4 + 1 = 7).
+# 3. Jalur langsung tidak selalu paling cepat, karena yang dihitung itu total bobotnya. Bisa aja jalur lebih panjang tapi tiap bagiannya kecil, jadi totalnya malah lebih cepat.
+# 4. Dijkstra cocok dipakai di kasus ini karena semua bobotnya positif (waktu tempuh), dan algoritma ini memang dibuat untuk nyari jalur tercepat dengan efisien.

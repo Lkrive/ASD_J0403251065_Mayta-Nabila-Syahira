@@ -46,7 +46,7 @@ hasil = bellman_ford(graph, 'A')
 print("Jarak terpendek dari node A:")
 for node, distance in hasil.items():
     print(node, "=", distance)
-
+    
 # Pertanyaan Analisis:
 # 1. Berapa bobot langsung dari A ke B?
 # 2. Berapa total bobot jalur A -> C -> B?
@@ -56,13 +56,9 @@ for node, distance in hasil.items():
 # 6. Apa perbedaan utama Bellman-Ford dan Dijkstra?
 
 # Penjelasan & Jawaban:
-# 1. Bobot langsung dari A ke B adalah 5.
-# 2. Total bobot jalur A -> C -> B adalah 4 (A ke C) + (-2) (C ke B) = 2.
-# 3. Jalur A -> C -> B menghasilkan jarak lebih kecil menuju B (2) dibandingkan dengan jalur langsung A -> B (5).
-# 4. Bellman-Ford dapat digunakan pada graph dengan bobot negatif karena algoritma ini melakukan relaksasi edge secara berulang, 
-#    sehingga dapat menangani perubahan jarak yang disebabkan oleh bobot negatif. Dijkstra tidak dapat menangani bobot negatif 
-#    karena menggunakan pendekatan greedy yang bisa salah arah jika ada bobot negatif.
-# 5. Proses relaksasi edge adalah proses di mana algoritma memeriksa apakah jarak ke suatu node dapat diperbaiki dengan melewati node lain. 
-#    Jika ditemukan jarak yang lebih kecil, maka jarak tersebut diperbarui.
-# 6. Perbedaan utama Bellman-Ford dan Dijkstra adalah bahwa Bellman Ford dapat menangani graph dengan bobot negatif, sementara Dijkstra tidak.
-#    Bellman-Ford menggunakan pendekatan relaksasi edge secara berulang,
+# 1. Bobot langsung dari A ke B adalah 5, karena langsung terhubung dari A ke B.
+# 2. Total bobot jalur A -> C -> B adalah 4 (A ke C) + (-2) (C ke B) = 2, jadi lebih kecil.
+# 3. Jalur A -> C -> B menghasilkan jarak lebih kecil, yaitu 2, dibandingkan jalur langsung A -> B yang nilainya 5.
+# 4. Bellman-Ford bisa digunakan untuk bobot negatif karena dia ngecek semua kemungkinan jalur berulang kali, jadi kalau ada perubahan jarak akibat bobot negatif masih bisa diperbaiki.
+# 5. Relaksasi edge itu proses ngecek apakah jarak ke suatu node bisa diperkecil lewat node lain, kalau bisa maka jaraknya di-update.
+# 6. Perbedaan utama Bellman-Ford dan Dijkstra adalah Bellman-Ford bisa menangani bobot negatif, sedangkan Dijkstra tidak, karena Dijkstra pakai pendekatan greedy yang bisa salah kalau ada nilai negatif.
