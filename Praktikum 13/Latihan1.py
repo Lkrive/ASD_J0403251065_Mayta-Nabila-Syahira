@@ -17,8 +17,8 @@ graph = {
 }
 
 def tampilkan_graph(g):
-    print("Representasi Weighted Graph (Adjacency List):")
-    for node in g:
+    print("Representasi Weighted Graph (Adjacency List):") # Menampilkan graph dengan format yang mudah dibaca
+    for node in g: # Iterasi setiap node dalam graph
         for tetangga, bobot in g[node]:
             # Menampilkan hubungan antar node beserta biayanya/bobotnya
             print(f"{node} --({bobot})--> {tetangga}")
@@ -34,7 +34,11 @@ tampilkan_graph(graph)
 # 3. Mengapa jumlah edge spanning tree selalu lebih sedikit?
 
 # Penjelasan & Jawaban:
-# 1. Graph awal bisa memiliki banyak edge dan cycle, sedangkan spanning tree adalah subgraph yang menghubungkan semua node tanpa cycle dan dengan jumlah edge minimum.
-# 2. Spanning tree tidak boleh memiliki cycle karena tujuan utamanya adalah menghubungkan semua node dengan biaya minimum. Cycle akan menambah biaya tanpa menambah konektivitas.
-# 3. Jumlah edge spanning tree selalu lebih sedikit karena hanya menghubungkan semua node dengan tepat (n-1 edge untuk n node), sedangkan graph awal bisa memiliki banyak edge yang tidak diperlukan untuk menghubungkan semua node.
+# 1. Graph awal bisa memiliki banyak edge dan cycle, sedangkan spanning tree adalah subgraph
+#    yang menghubungkan semua node tanpa cycle dan dengan jumlah edge minimum.
+# 2. Spanning tree tidak boleh memiliki cycle karena tujuan utamanya adalah menghubungkan 
+#    semua node dengan biaya minimum. Cycle akan menambah biaya tanpa menambah konektivitas.
+# 3. Jumlah edge spanning tree selalu lebih sedikit karena hanya menghubungkan semua node 
+#    dengan tepat (n-1 edge untuk n node), sedangkan graph awal bisa memiliki banyak edge yang tidak 
+#    diperlukan untuk menghubungkan semua node.
 

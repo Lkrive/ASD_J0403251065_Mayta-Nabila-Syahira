@@ -55,4 +55,7 @@ print(f"Total Latency Minimum: {total_lat}")
 # 2. Algoritma yang digunakan adalah Kruskal, yang mengurutkan edge berdasarkan bobot (latency) dan memilih edge terkecil yang tidak membentuk siklus.
 # 3. Edge yang dipilih dalam MST adalah: RouterC-RouterD (1), RouterA-RouterC (2), RouterA-RouterB (3).
 # 4. Total bobot MST adalah 6 (1 + 2 + 3).
-# 5. Edge tertentu tidak dipilih karena mereka akan membentuk siklus atau memiliki bobot yang lebih tinggi dibandingkan dengan edge lain yang tersedia. Misalnya, edge RouterB-RouterD dengan bobot 5 tidak dipilih karena sudah ada edge RouterC-RouterD dengan bobot 1 yang menghubungkan D ke MST dengan latency lebih rendah, dan edge RouterB-RouterC dengan bobot 4 tidak dipilih karena sudah ada edge RouterA-RouterC dengan bobot 2 yang menghubungkan C ke MST dengan latency lebih rendah.
+# 5. Edge tertentu tidak dipilih karena mereka akan membentuk siklus atau memiliki bobot yang lebih tinggi dibandingkan dengan edge lain yang tersedia. 
+#    Misalnya, edge RouterB-RouterD dengan bobot 5 tidak dipilih karena sudah ada edge RouterC-RouterD dengan bobot 1 yang menghubungkan D ke MST dengan 
+#    latency lebih rendah, dan edge RouterB-RouterC dengan bobot 4 tidak dipilih karena sudah ada edge RouterA-RouterC dengan bobot 2 yang menghubungkan C 
+#    ke MST dengan latency lebih rendah.

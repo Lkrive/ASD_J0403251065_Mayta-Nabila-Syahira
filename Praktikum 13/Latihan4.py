@@ -51,4 +51,6 @@ print(f"Total Biaya Minimum: {total_biaya}")
 # 1. Algoritma yang digunakan adalah Prim, yang merupakan algoritma greedy untuk menemukan Minimum Spanning Tree (MST).
 # 2. Edge yang dipilih adalah: Bogor-Depok (2), Depok-Jakarta (3), Depok-Bandung (4).
 # 3. Total biaya minimum adalah 9 (2 + 3 + 4).
-# 4. MST cocok digunakan pada kasus ini karena kita ingin menghubungkan semua kota dengan biaya minimum tanpa membentuk siklus, yang merupakan karakteristik utama dari MST. Dengan menggunakan MST, kita dapat memastikan bahwa semua kota terhubung dengan biaya paling efisien.
+# 4. MST cocok digunakan pada kasus ini karena kita ingin menghubungkan semua kota dengan biaya minimum tanpa membentuk 
+#    siklus, yang merupakan karakteristik utama dari MST. Dengan menggunakan MST, kita dapat memastikan bahwa semua kota 
+#    terhubung dengan biaya paling efisien.

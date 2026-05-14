@@ -60,8 +60,13 @@ print("Total Bobot Minimum:", weight_k)
 # 5. Apa perbedaan pendekatan Prim dan Kruskal?
 
 # Penjelasan & Jawaban:
-# 1. Kruskal tidak memulai dari node tertentu, melainkan mengurutkan semua edge terlebih dahulu. Namun, edge pertama yang dipilih adalah edge dengan bobot terkecil (B-C dengan bobot 1).
+# 1. Kruskal tidak memulai dari node tertentu, melainkan mengurutkan semua edge terlebih dahulu. 
+#    Namun, edge pertama yang dipilih adalah edge dengan bobot terkecil (B-C dengan bobot 1).
 # 2. Edge yang dipilih pertama kali adalah edge dengan bobot terkecil, yaitu edge B-C dengan bobot 1.
-# 3. Prim menentukan edge berikutnya dengan memilih edge terkecil yang terhubung dengan node yang sudah terhubung (visited), sedangkan Kruskal memilih edge terkecil dari seluruh edge yang tersedia tanpa memperhatikan node mana yang sudah terhubung.
+# 3. Prim menentukan edge berikutnya dengan memilih edge terkecil yang terhubung dengan node yang 
+#    sudah terhubung (visited), sedangkan Kruskal memilih edge terkecil dari seluruh edge yang tersedia 
+#    tanpa memperhatikan node mana yang sudah terhubung.
 # 4. Total bobot MST yang dihasilkan adalah 10 (B-C = 1, D-E = 2, A-C = 2, E-Z = 3, D-Z = 6).
-# 5. Perbedaan pendekatan Prim dan Kruskal adalah Prim membangun MST dengan memulai dari satu node dan menambahkan edge terkecil yang terhubung dengan node yang sudah terhubung, sedangkan Kruskal mengurutkan semua edge terlebih dahulu dan memilih edge terkecil yang tidak membentuk siklus tanpa memperhatikan node mana yang sudah terhubung.    
+# 5. Perbedaan pendekatan Prim dan Kruskal adalah Prim membangun MST dengan memulai dari satu node dan 
+#    menambahkan edge terkecil yang terhubung dengan node yang sudah terhubung, sedangkan Kruskal mengurutkan 
+#    semua edge terlebih dahulu dan memilih edge terkecil yang tidak membentuk siklus tanpa memperhatikan node mana yang sudah terhubung.    

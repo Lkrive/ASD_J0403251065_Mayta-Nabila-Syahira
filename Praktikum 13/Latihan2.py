@@ -50,7 +50,12 @@ print("Total Bobot Minimum:", total)
 # 4. Mengapa edge tertentu tidak dipilih?
 
 # Penjelasan & Jawaban:
-# 1. Edge yang dipilih pertama kali adalah edge dengan bobot terkecil yang terhubung dengan node awal (dalam kasus ini, edge A-C dengan bobot 2).
-# 2. Edge dengan bobot paling kecil dipilih lebih dahulu karena Prim adalah algoritma greedy yang bertujuan untuk membangun MST dengan biaya minimum. Memilih edge terkecil memastikan bahwa kita selalu menambah node dengan biaya paling rendah.
+# 1. Edge yang dipilih pertama kali adalah edge dengan bobot terkecil yang terhubung dengan 
+#    node awal (dalam kasus ini, edge A-C dengan bobot 2).
+# 2. Edge dengan bobot paling kecil dipilih lebih dahulu karena Prim adalah algoritma greedy 
+#    yang bertujuan untuk membangun MST dengan biaya minimum. Memilih edge terkecil memastikan 
+#    bahwa kita selalu menambah node dengan biaya paling rendah.
 # 3. Total bobot MST yang dihasilkan adalah 7 (A-C = 2, C-D = 1, A-B = 4).
-# 4. Edge tertentu tidak dipilih karena mereka akan membentuk siklus atau memiliki bobot yang lebih tinggi dibandingkan dengan edge lain yang tersedia. Misalnya, edge B-D dengan bobot 5 tidak dipilih karena sudah ada edge C-D dengan bobot 1 yang menghubungkan D ke MST dengan biaya lebih rendah. 
+# 4. Edge tertentu tidak dipilih karena mereka akan membentuk siklus atau memiliki bobot yang 
+#    lebih tinggi dibandingkan dengan edge lain yang tersedia. Misalnya, edge B-D dengan bobot 5 
+#    tidak dipilih karena sudah ada edge C-D dengan bobot 1 yang menghubungkan D ke MST dengan biaya lebih rendah. 
